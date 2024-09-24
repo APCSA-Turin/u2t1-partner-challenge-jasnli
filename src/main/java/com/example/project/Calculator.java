@@ -74,6 +74,6 @@ public class Calculator{
     // (THIS METHOD DOES NOT PRINT)
     public String info() {
         //implement code here
-        return "This calculator is a model " + calcModel;
+        return "This calculator is a model " + calcModel + " where " + calcModel + " should be filled in with the value stored in the calcModel instance variable.";
     }
 }
