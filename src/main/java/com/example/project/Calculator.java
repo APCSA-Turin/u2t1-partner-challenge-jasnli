@@ -1,10 +1,11 @@
 package com.example.project;
 public class Calculator{
     private String calcModel;
-    
+
     //constructor that creates an instance of the calculator class
-    public Calculator() {
+    public Calculator(String model) {
         //implement code here
+        calcModel = model;
     }
     
     // method that performs the operation designated by operand (which
@@ -16,7 +17,23 @@ public class Calculator{
     // (THIS METHOD DOES NOT PRINT)
     public double performOperation(String operand, int num1, int num2) {
         //implement code here
-        return 0.00;
+        double answer = 0.00;
+        if ("+".equals(operand)) {
+            answer = num1 + num2;
+            return answer;
+        } if ("-".equals(operand)) {
+            answer = num1 - num2;
+            return answer;
+        } if ("*".equals(operand)) {
+            answer = num1 * num2;
+            return answer;
+        } if ("/".equals(operand)) {
+            answer = (double) num1 / (double) num2;
+            return answer;
+        } else {
+            answer = 0.00;
+            return answer;
+        }
     }
 
     // method that checks if num1 is evenly divisible by num2, and if so,
@@ -24,7 +41,12 @@ public class Calculator{
     // (THIS METHOD DOES NOT PRINT)
     public boolean divisibleBy(int num1, int num2) {
         //implement code here
-        return false;
+        if (num1 % num2 == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     // method that constructs and returns a string representing a coordinate
@@ -32,13 +54,18 @@ public class Calculator{
     // (THIS METHOD DOES NOT PRINT)
     public String coordinatePair(int x, int y) {
         //implement code here
-        return "";
+        return "(" + x + "," + y + ")";
     }
     // method that determines and returns the result of |num1 - num2|
     // (THIS METHOD DOES NOT PRINT)
     public int absoluteValue(int num1, int num2) {
         //implement code here
-        return 0;
+        if (num1-num2 > 0){
+            return num1 - num2;
+        }
+        else{
+            return -1 * (num1 - num2);
+        }
     }
     
     // method that constructs and returns a String in the format:
@@ -47,6 +74,6 @@ public class Calculator{
     // (THIS METHOD DOES NOT PRINT)
     public String info() {
         //implement code here
-        return "";
+        return "This calculator is a model " + calcModel;
     }
 }
